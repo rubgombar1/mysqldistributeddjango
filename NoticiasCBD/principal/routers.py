@@ -3,7 +3,7 @@ class principalRouter(object):
     A router to control all database operations on models in
     the principal application
     """
- 
+    '''
     def db_for_read(self, model, **hints):
         """
         Point all operations on principal models to 'replica1'
@@ -29,3 +29,4 @@ class principalRouter(object):
         elif model._meta.app_label == 'principal':
             return False
         return None
+    '''

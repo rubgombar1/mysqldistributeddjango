@@ -5,9 +5,16 @@ from django.db import models
 class Persona(models.Model):
     nombre = models.CharField(max_length=30)
     apellidos = models.CharField(max_length=30)
-    
     def __unicode__(self):
         return self.nombre +' ' + self.apellidos
+
+class Editorial(models.Model):
+    nombre = models.CharField(max_length=30)
+    #Relaciones
+    empleados = models.ManyToManyField(Persona)
+
+    def __unicode__(self):
+        return self.nombre
     
 class Noticia(models.Model):
     titulo = models.CharField(max_length=50)
@@ -15,14 +22,8 @@ class Noticia(models.Model):
     fecha_pub = models.DateTimeField(auto_now=True)
     # Relaciones
     publicador = models.ForeignKey(Persona)
+    editoral = models.ForeignKey(Editorial)
     
     def __unicode__(self):
         return self.titulo
     
-class Editorial(models.Model):
-    nombre = models.CharField(max_length=30)
-    #Relaciones
-    empleados = models.ManyToManyField(Persona)
-    
-    def __unicode__(self):
-        return self.nombre

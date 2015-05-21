@@ -19,5 +19,12 @@ from principal import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'', views.news),
+    url(r'^$', views.news),
+    url(r'person/add$', views.addPerson),
+    url(r'person/save$', views.savePerson),
+    url(r'editorial/add$', views.addEditorial),
+    url(r'editorial/save$', views.saveEditorial),
+    url(r'new/add$', views.addNew),
+    url(r'new/save$', views.saveNew),
+    url(r'new/details', views.detailsNew),
 ]

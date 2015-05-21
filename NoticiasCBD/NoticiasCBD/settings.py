@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'principal',
+    'crispy_forms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,7 +75,7 @@ WSGI_APPLICATION = 'NoticiasCBD.wsgi.application'
 
 # Database
 #     
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -93,20 +94,31 @@ DATABASES = {
         'PORT': '3306',
     },
 }
-
-
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'database_cbd',
+        'USER': 'cbd',
+        'PASSWORD': 'cbd',
+        'HOST': '',
+        'PORT': '3306',
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
 # Static files (CSS, JavaScript, Images)

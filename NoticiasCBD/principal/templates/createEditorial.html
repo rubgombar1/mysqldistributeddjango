@@ -1,0 +1,8 @@
+{% extends 'master-page.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Nueva editorial{% endblock %}
+{% block jumbotron %}
+    {{ error }}
+    {% csrf_token %}
+    {% crispy form %}
+{% endblock %}

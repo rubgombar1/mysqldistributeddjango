@@ -1,34 +1,14 @@
-<!doctype html>
+{% extends 'master-page.html' %}
 
-<html lang="en">
-<head>
-  <meta charset="ISO-8859-1">
-
-  <title>CBD</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-    <h1>Articles</h1>
+{% block jumbotron %}
+    <div class="text-center"> <h1>Noticias</h1></div>
     <ul>
     {% for new in news %}
-        <li>{{ new.titulo }} </li>
+        <li><a href="/new/details?newId={{ new.id }}" >{{ new.titulo }}</a>  --  {{ new.fecha_pub }}</li>
     {% empty %}
-        <li>No articles yet.</li>
+        <li>No hay noticias todavia</li>
     {% endfor %}
     </ul>
- 
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</body>
-</html>
 
+{% endblock %}
 

@@ -1,0 +1,25 @@
+{% extends 'master-page.html' %}
+
+{% block jumbotron %}
+    <div class="row">
+
+    <div class="col-lg-6">
+        Título de la noticia: {{ new.titulo }}
+    </div>
+    <div class="col-lg-6">
+        Fecha de publicación: {{ new.fecha_pub }}
+    </div>
+
+    <div class="col-lg-6">
+        Publicador: {{ new.publicador }}
+    </div>
+    <div class="col-lg-6">
+        Editorial: {{ new.editoral }}
+    </div>
+
+    <div class="col-lg-12">
+        Cuerpo de la noticia: {{ new.cuerpo }}
+    </div>
+    </div>
+
+{% endblock %}

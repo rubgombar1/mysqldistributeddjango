@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
                 ('titulo', models.CharField(max_length=50)),
                 ('cuerpo', models.TextField()),
                 ('fecha_pub', models.DateTimeField(auto_now=True)),
+                ('editoral', models.ForeignKey(to='principal.Editorial')),
             ],
         ),
         migrations.CreateModel(
